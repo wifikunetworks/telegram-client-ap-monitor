@@ -29,10 +29,14 @@
     "Yusi"="172.16.0.25";
     "Yasmin"="172.16.0.26";
     "Salma"="172.16.0.27";
+    "Yenny"="172.16.0.28";
+    "Ompong"="172.16.0.29";
+    "Apsah"="172.16.0.30";
+    "Annisa"="172.16.0.31";
+    "SNI"="172.16.0.32";
+    "Sahadi"="172.16.0.33";
     "Kendro"="192.168.4.2";
-    "Nigsih"="192.168.4.3";
-    "Sahadi"="192.168.4.4";
-    "Eka Wulan"="192.168.4.5";
+    "Ningsih"="192.168.4.3";
     "Yudi Bengkel"="192.168.4.6";
     "Delio"="192.168.4.7";
 }
@@ -72,7 +76,7 @@
         }
     }
     :if ($offlineCount = 5) do={
-        :local offlineMessage ("Akses point " . $host . " (" . $owner . ") offline \E2\9D\8C %0A" . $datetime . "%0AMohon segera lakukan pengecekan!")
+        :local offlineMessage ("Akses point http://" . $host . " (" . $owner . ") offline \E2\9D\8C %0A" . $datetime . "%0AMohon segera lakukan pengecekan!")
         /tool fetch url=("https://api.telegram.org/bot" . $telegramBotToken . "/sendMessage\?chat_id=" . $chatId1 . "&text=" . $offlineMessage) mode=https
         /tool fetch url=("https://api.telegram.org/bot" . $telegramBotToken . "/sendMessage\?chat_id=" . $chatId2 . "&text=" . $offlineMessage) mode=https
     }
